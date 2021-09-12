@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-
-namespace LanguageFeaturesCs7
+﻿namespace LanguageFeatures.Cs8
 {
-    class CS8UsingPatterns
+    [TestClass]
+    public class UsingPatterns
     {
+        [TestMethod]
         public void OldUsing()
         {
             using (var tw = new StringWriter())
             {
                 tw.Write("Test");
+                Assert.AreEqual("Test", tw.ToString());
             }
+            // but tw is out of scope now
+            // tw.ToString();
         }
+
+        [TestMethod]
         public void TestSimpleUsing()
         {
             using var tw = new StringWriter();
             tw.Write("Test");
+            Assert.AreEqual("Test", tw.ToString());
         }
     }
 }

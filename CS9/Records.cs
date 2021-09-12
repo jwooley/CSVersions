@@ -1,9 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace LanguageFeaturesCs7.CS9
+namespace LanguageFeatures.CS9
 {
     [TestClass]
     public class Records

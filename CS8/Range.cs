@@ -1,13 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace LanguageFeaturesCs7
+namespace LanguageFeatures.Cs8
 {
     [TestClass]
-    public class CS8Range
+    public class Range
     {
         [TestMethod]
         public void TestRangeNums()

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LanguageFeaturesCs7
+﻿namespace LanguageFeatures.Cs8
 {
     public class Address
     {

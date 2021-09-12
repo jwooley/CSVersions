@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Text.RegularExpressions;
 
-namespace LanguageFeaturesCs7.CS9
+namespace LanguageFeatures.CS9
 {
 
     partial class ExpandedPartial

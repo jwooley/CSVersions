@@ -1,12 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LanguageFeaturesCs7
+namespace LanguageFeatures.Cs7
 {
     /// <summary>
     /// CS main themes:
@@ -31,7 +25,7 @@ namespace LanguageFeaturesCs7
         }
 
         [TestMethod]
-        public void CS73_TypleEqualityComparisons()
+        public void CS73_TupleEqualityComparisons()
         {
             var t1 = (x: 1, Y: "two");
             var t2 = (a: 1, b: "two");

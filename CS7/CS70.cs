@@ -1,11 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace LanguageFeaturesCs7
+namespace LanguageFeatures.Cs7
 {
     [TestClass]
     public class CS7Tests
@@ -80,6 +76,7 @@ namespace LanguageFeaturesCs7
             Assert.IsNull(t);
         }
 
+        #region LessCommonFeatures
         [TestMethod]
         public async Task GeneralizedAsyncReturnTypes()
         {
@@ -105,5 +102,6 @@ namespace LanguageFeaturesCs7
             loadCount += 1;
             return cachedName;
         }
+        #endregion
     }
 }

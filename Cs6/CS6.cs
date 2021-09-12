@@ -1,25 +1,19 @@
-﻿using System;
-using static System.Math;       // Imports static
+﻿using static System.Math;       // Imports static
 using static System.Console;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics.Tracing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 
-namespace Demo
+namespace LanguageFeatures.CS6
 {
 
     [TestClass]
-    public class CS6
+    public class Demos
     {
         public int X { get; set; } = 1;  // Auto property Initializer
-        public int Y { get;  } = 2;      // Getter-Only Auto Props
+        public int Y { get; } = 2;      // Getter-Only Auto Props
         public int Z { get; }
 
-        public CS6()
+        public Demos()
         {
             Z = 3;          // Constructor assignment to getter only;
         }
@@ -58,8 +52,8 @@ namespace Demo
             Trace.WriteLine((parent == null) ? 0  : parent.Age);
 
             var age = parent?.Age;
-            Trace.WriteLine(parent?.Age);
-            var nullPropigatedAge = parent?.Age;
+            Trace.WriteLine(age);
+
             Trace.WriteLine(parent?.Children.FirstOrDefault()?.Age);
         }
 
@@ -70,7 +64,9 @@ namespace Demo
             {
                 Age = 42
             };
-            Trace.WriteLine(string.Format("{1} is {2} years old", child.Name, child.Age));
+            Assert.ThrowsException<FormatException>(() =>
+                Trace.WriteLine(string.Format("{1} is {2} years old", child.Name, child.Age))
+            );
 
             Trace.WriteLine($"{child.Name} is {child.Age} years old on {child.BirthDate:mm/dd/yyyy}");    // String interpolation.
         }
@@ -96,6 +92,7 @@ namespace Demo
             return $"{FirstName} {LastName}";
         }
         public string FullName1() => $"{FirstName} {LastName}";     // Expression Bodied Members
+        public string FormattedName => $"{FirstName} {LastName}";  // Expression properties
 
         public void TestCode()
         {

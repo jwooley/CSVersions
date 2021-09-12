@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿namespace LanguageFeatures.Cs8
+{ 
 [TestClass]
 public class DefaultInterfaceTester
 {
@@ -28,16 +28,17 @@ public class Location : IAddress
     }
 }
 
-interface IAddress
-{
-    string Address1 { get; set; }
-    string Address2 { get; set; }
-    string City { get; set; }
-    string State { get; set; }
-    string Zip { get; set; }
-
-    public string Formatted()
+    interface IAddress
     {
-        return $"{Address1}\r\n{Address2}\r\n{City}, {State} {Zip}";
+        string Address1 { get; set; }
+        string Address2 { get; set; }
+        string City { get; set; }
+        string State { get; set; }
+        string Zip { get; set; }
+
+        public string Formatted()
+        {
+            return $"{Address1}\r\n{Address2}\r\n{City}, {State} {Zip}";
+        }
     }
 }

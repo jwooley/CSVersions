@@ -1,4 +1,6 @@
-﻿namespace LanguageFeatures.Cs8
+﻿#nullable enable
+
+namespace LanguageFeatures.Cs8
 {
     public class Address
     {

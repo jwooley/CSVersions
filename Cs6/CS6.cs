@@ -1,12 +1,12 @@
 ﻿using static System.Math;       // Imports static
 using static System.Console;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.Diagnostics;
 
 namespace LanguageFeatures.CS6
 {
 
-    [TestClass]
+    
     public class Demos
     {
         public int X { get; set; } = 1;  // Auto property Initializer
@@ -18,7 +18,7 @@ namespace LanguageFeatures.CS6
             Z = 3;          // Constructor assignment to getter only;
         }
 
-        [TestMethod]
+        [Fact]
         public void CanImportStatic()
         {
 
@@ -26,12 +26,12 @@ namespace LanguageFeatures.CS6
             WriteLine("Test");          // Imports static
 
             var radius = 3;
-            Assert.AreEqual(
+            Assert.Equal(
                 2 * Math.PI * radius, 
                 2 * PI * radius);   // Imports static
         }
 
-        [TestMethod]
+        [Fact]
         public async Task CanAwaitInCatchAndFinally()
         {
             try
@@ -44,7 +44,7 @@ namespace LanguageFeatures.CS6
             }
         }
 
-        [TestMethod]
+        [Fact]
         public void NullPropagatingOperator()
         {
             var parent = new Person();
@@ -57,14 +57,14 @@ namespace LanguageFeatures.CS6
             Trace.WriteLine(parent?.Children.FirstOrDefault()?.Age);
         }
 
-        [TestMethod]
+        [Fact]
         public void StringInterpolation()
         {
             var child = new Person
             {
                 Age = 42
             };
-            Assert.ThrowsException<FormatException>(() =>
+            Assert.Throws<FormatException>(() =>
                 Trace.WriteLine(string.Format("{1} is {2} years old", child.Name, child.Age))
             );
 
@@ -79,7 +79,7 @@ namespace LanguageFeatures.CS6
             OnNotifyPropertyChanged("name");           // Without nameof
             OnNotifyPropertyChanged(nameof(name));     // With nameof
 
-            Assert.AreEqual("Age", nameof(parent.Age));
+            Assert.Equal("Age", nameof(parent.Age));
 
             if (1 == 2)
             {
@@ -99,7 +99,7 @@ namespace LanguageFeatures.CS6
             var x = 1 + 2;
         }
 
-        [TestMethod]
+        [Fact]
         public void CanInitializeIndexes()
         {
             var numsBefore = new Dictionary<int, string>();

@@ -1,12 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 using System.Diagnostics;
 
 namespace LanguageFeatures.Cs7
 {
-    [TestClass]
+    
     public class CS7Tests
     {
-        [TestMethod]
+        [Fact]
         public void CS7Test()
         {
             object[] numbers = {0b1, 0b10, new object[] { 122_345.6, 0b10, 0b100, 0b_1000 }, 0b1_00_00, 0b1000_00, "123", null }; // Binary literals with digit separators
@@ -32,7 +32,7 @@ namespace LanguageFeatures.Cs7
                                 r.sum += parsed;
                                 r.count++;
                             }
-                            Assert.AreEqual(parsed, 123);
+                            Assert.Equal(parsed, 123);
                             break;
                         case null:
                             break;
@@ -42,49 +42,52 @@ namespace LanguageFeatures.Cs7
             }
             var result = Tally(numbers);
             Trace.WriteLine($"Sum: {result.sum} Count: {result.count}");
-            Assert.AreEqual(8, result.count);
+            Assert.Equal(8, result.count);
         }
-        [TestMethod]
+        [Fact]
         public void CS7RefLocal()
         {
             var value = "1";
             int y;
             if (int.TryParse(value, out y))
             {
-                Assert.AreEqual(1, y);                                  // Old way
+                Assert.Equal(1, y);                                  // Old way
             }
 
             if (int.TryParse(value, out int x))                         // Ref local
             {
-                Assert.AreEqual(1, x);
+                Assert.Equal(1, x);
             }
 
-            Assert.AreEqual(1, x);                                      // Ref local scope
+            Assert.Equal(1, x);                                      // Ref local scope
         }
 
-        [TestMethod]
-        [ExpectedException(typeof (NullReferenceException))]
+        [Fact]
         public void CS7ThrowExpressions()
         {
-            string s = null;
-            if (s == null)
+            Assert.Throws<NullReferenceException>(() =>
             {
-                throw new NullReferenceException("s is null");
-            }
+                string s = null;
+                if (s == null)
+                {
+                    throw new NullReferenceException("s is null");
+                }
 
-            var t = s ?? throw new NullReferenceException("s is null");
-            Assert.IsNull(t);
+                var t = s ?? throw new NullReferenceException("s is null");
+                Assert.Null(t);
+
+            });
         }
 
         #region LessCommonFeatures
-        [TestMethod]
+        [Fact]
         public async Task GeneralizedAsyncReturnTypes()
         {
-            Assert.AreEqual(0, loadCount);
-            Assert.AreEqual("Jim", await GetUserName());
-            Assert.AreEqual(1, loadCount);
-            Assert.AreEqual("Jim", await GetUserName());
-            Assert.AreEqual(1, loadCount);
+            Assert.Equal(0, loadCount);
+            Assert.Equal("Jim", await GetUserName());
+            Assert.Equal(1, loadCount);
+            Assert.Equal("Jim", await GetUserName());
+            Assert.Equal(1, loadCount);
         }
 
         public ValueTask<string> GetUserName()

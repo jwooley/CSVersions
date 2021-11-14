@@ -1,11 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 
 namespace LanguageFeatures.CS9
 {
-    [TestClass]
+    
     public class Records
     {
-        [TestMethod]
+        [Fact]
         public void RecordEquality()
         {
             var e1 = new EmployeePoco("Jim", "Wooley", "SA");

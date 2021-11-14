@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 
 namespace LanguageFeatures.Cs7
 {
-    [TestClass]
+    
     public class CS72
     {
 
@@ -11,21 +11,21 @@ namespace LanguageFeatures.Cs7
             return a + b + c + d;
         }
 
-        [TestMethod]
+        [Fact]
         public void CS72_NonTrailingNamedArguments()
         {
-            Assert.AreEqual(10, HasLotsOfParams(1));
-            Assert.AreEqual(107, HasLotsOfParams(1, c: 100));
-            Assert.AreEqual(107, HasLotsOfParams(a: 1, c: 100));
-            Assert.AreEqual(107, HasLotsOfParams(c: 100, a: 1));
+            Assert.Equal(10, HasLotsOfParams(1));
+            Assert.Equal(107, HasLotsOfParams(1, c: 100));
+            Assert.Equal(107, HasLotsOfParams(a: 1, c: 100));
+            Assert.Equal(107, HasLotsOfParams(c: 100, a: 1));
         }
 
 
-        [TestMethod]
+        [Fact]
         public void CS72_LeadingUnderscorsInDigitSeparators()
         {
             var thisDidntWorkWith70 = 0b_0001;
-            Assert.AreEqual(1, thisDidntWorkWith70);
+            Assert.Equal(1, thisDidntWorkWith70);
         }
 
         #region ReferenceSemantics
@@ -35,20 +35,20 @@ namespace LanguageFeatures.Cs7
             return z;
         }
 
-        [TestMethod]
+        [Fact]
         public void CS72_ReferenceSemantics_In()
         {
             var a = 3.0;
             var b = 4.0;
 
-            Assert.AreEqual(5.0, Hypotenuse(a, b));
-            Assert.AreEqual(3.0, a);
+            Assert.Equal(5.0, Hypotenuse(a, b));
+            Assert.Equal(3.0, a);
         }
 
         private static double p = 3.15;
         public static ref readonly double PIish => ref p;
 
-        [TestMethod]
+        [Fact]
         public void CS72_ReferenceSemantics_refReadonly()
         {
             var p1 = CS72.PIish;                    // By val copy
@@ -58,11 +58,11 @@ namespace LanguageFeatures.Cs7
             //p2 = 3.14;                            // can't change
 
         }
-        [TestMethod]
+        [Fact]
         public void CS7_ReferenceSemantics_readonlyStruct()
         {
             var c = new Coords(3, 4);
-            Assert.AreEqual(0, Coords.Start.X);
+            Assert.Equal(0, Coords.Start.X);
             // Coords.Start.X = c.X;
         }
 
@@ -81,11 +81,11 @@ namespace LanguageFeatures.Cs7
         #endregion
 
         #region PrivateProtected
-        [TestMethod]
+        [Fact]
         public void Cs72_PrivateProtected()
         {
             A instance = new B();
-            Assert.AreEqual("B", instance.ValB);
+            Assert.Equal("B", instance.ValB);
             // Not exposed from base class instance.ValC 
         }
 

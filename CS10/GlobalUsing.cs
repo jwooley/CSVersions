@@ -1,15 +1,19 @@
 ﻿global using System;
+global using System.IO;
+global using System.Linq;
 global using static System.Math;
-global using Microsoft.VisualStudio.TestTools.UnitTesting;
+global using Xunit;
+global using System.Threading.Tasks;
+global using System.Collections.Generic;
 
 namespace LanguageFeatures.CS10;
 
-[TestClass]
+
 public class GlobalUsing
 {
-    [TestMethod]
+    [Fact]
     public void TestUsing()
     {
-        Assert.AreEqual(1, Abs(1 - 2));
+        Assert.Equal(1, Abs(1 - 2));
     }
 }

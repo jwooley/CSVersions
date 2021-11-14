@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace LanguageFeatures.CS10;
 
-namespace LanguageFeatures.CS10;
-
-[TestClass]
 public class ExtendedPropertyPatterns
 {
-    [TestMethod]
+    [Fact]
     public void CanFilterExtendedPropertyPattern()
     {
         var person = new ComplexEmployee("Jim", "Wooley", "SDP",
             new ComplexEmployee("My", "Manager", "Director", null));
 
-        Assert.IsTrue(IsManagedBy(person));
-        Assert.IsTrue(IsManagedExtended(person));
+        Assert.True(IsManagedBy(person));
+        Assert.True(IsManagedExtended(person));
     }
 
     bool IsManagedBy(ComplexEmployee test) =>

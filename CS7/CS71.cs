@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 
 namespace LanguageFeatures.Cs7
 {
@@ -11,34 +11,34 @@ namespace LanguageFeatures.Cs7
         }
     }
 
-    [TestClass]
+    
     public class CS71
     {
-        [TestMethod]
+        [Fact]
         public void CS71_DefaultLiteralExpresions()
         {
             Func<string, bool> whereOld = default(Func<string, bool>);
-            Assert.IsNull(whereOld);
+            Assert.Null(whereOld);
 
             Func<string, bool> whereClause = default;
-            Assert.IsNull(whereClause);
+            Assert.Null(whereClause);
 
             int? i = default;
-            Assert.IsFalse(i.HasValue);
+            Assert.False(i.HasValue);
 
             int j = default;
-            Assert.AreEqual(0, j);
+            Assert.Equal(0, j);
         }
 
-        [TestMethod]
+        [Fact]
         public void CS71_InferredTupleElementNames()
         {
             int theAnswer = 42;
             var q1 = (theAnswer: theAnswer, PI: Math.PI);
-            Assert.AreEqual(42, q1.theAnswer);
+            Assert.Equal(42, q1.theAnswer);
 
             var q2 = (theAnswer, Math.PI);
-            Assert.AreEqual(42, q2.theAnswer);
+            Assert.Equal(42, q2.theAnswer);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 
 namespace LanguageFeatures.Cs7
 {
@@ -9,12 +9,12 @@ namespace LanguageFeatures.Cs7
     /// <item>Incremental improvements to existing features</item>
     /// </list>
     /// </summary>
-    [TestClass]
+    
     public class CS73
     {
         public int ExpressionVariablesInInitializer = int.TryParse("42", out var answer) ? 0 : answer;
 
-        [TestMethod]
+        [Fact]
         public void CS73_ExpressionVariablesInLinq()
         {
             var vals = Enumerable.Range(1, 10);
@@ -24,14 +24,14 @@ namespace LanguageFeatures.Cs7
                 .Where(v => v % 2 == 0);
         }
 
-        [TestMethod]
+        [Fact]
         public void CS73_TupleEqualityComparisons()
         {
             var t1 = (x: 1, Y: "two");
             var t2 = (a: 1, b: "two");
             var t3 = (Y: "two", x: 1);
-            Assert.AreEqual(t1, t2);
-            Assert.AreNotEqual(t1, t3);
+            Assert.Equal(t1, t2);
+            Assert.False(t1.Equals(t3));
         }
 
         #region CS73_IndexFixedFieldsWithoutPinning()
@@ -56,21 +56,21 @@ namespace LanguageFeatures.Cs7
         }
         #endregion
 
-        [TestMethod]
+        [Fact]
         public void CS73_ReassigningRefLocals()
         {
         }
 
-        [TestMethod]
+        [Fact]
         unsafe public void CS73_StackallocArrayInitializers()
         {
             var old = new int[] { 1, 2, 3 };
             int* cs73a = stackalloc int[] { 1, 2, 3 };
 
-            Assert.AreEqual(2, cs73a[1]);
+            Assert.Equal(2, cs73a[1]);
         }
 
-        [TestMethod]
+        [Fact]
         unsafe public void CS73_FixedWorksWithGetPinnableReference()
         {
             int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23 };
@@ -83,12 +83,12 @@ namespace LanguageFeatures.Cs7
                 {
                     sum += *(ptrToTeens + i);
                 }
-                Assert.AreEqual(60, sum);
+                Assert.Equal(60, sum);
             }
-            Assert.AreEqual(teens[0], 11);
+            Assert.Equal(teens[0], 11);
         }
 
-        [TestMethod]
+        [Fact]
         public void CS73_AdditionalGenericConstraints()
         {
             M<Action<string>, System.ConsoleColor, CS73>(x => Console.Write(x), System.ConsoleColor.Black, this);
@@ -99,9 +99,9 @@ namespace LanguageFeatures.Cs7
                 where O: new()
             {
                 // Do something with these values
-                Assert.IsTrue(d is Delegate);
-                Assert.IsTrue(e is Enum);
-                Assert.IsTrue(o is Object);
+                Assert.True(d is Delegate);
+                Assert.True(e is Enum);
+                Assert.True(o is Object);
             }
         }
 

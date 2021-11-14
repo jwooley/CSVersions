@@ -1,9 +1,11 @@
-﻿namespace LanguageFeatures.Cs8
+﻿using System.Threading;
+
+namespace LanguageFeatures.Cs8
 {
-    [TestClass]
+    
     public class AsyncStreams
     {
-        [TestMethod]
+        [Fact]
         public async Task DoSomethingAsync()
         {
             var test = new TestAsyncList();
@@ -13,7 +15,7 @@
                 last = person;
                 Console.WriteLine(person.Name);
             }
-            Assert.AreEqual("Person 4", last.Name);
+            Assert.Equal("Person 4", last.Name);
         }
     }
 

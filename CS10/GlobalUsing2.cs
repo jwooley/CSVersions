@@ -1,9 +1,8 @@
-﻿[TestClass]
-public class GlobalUsing2
+﻿public class GlobalUsing2
 {
-    [TestMethod]
+    [Fact]
     public void UsingFromGlobalUsing()
     {
-        Assert.AreEqual(1, Abs(1 - 2));
+        Assert.Equal(1, Abs(1 - 2));
     }
 }

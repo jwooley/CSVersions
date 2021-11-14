@@ -1,11 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 
 namespace LanguageFeatures.Cs8
 {
-    [TestClass]
+    
     public class SwitchExpressions
     {
-        [TestMethod]
+        [Fact]
         public void TestSwitchExpression()
         {
             var (a, b, option) = (10, 5, "+");
@@ -17,14 +17,14 @@ namespace LanguageFeatures.Cs8
                 _ => a * b
             };
 
-            Assert.AreEqual(15, example1);
+            Assert.Equal(15, example1);
         }
 
-        [TestMethod]
+        [Fact]
         public void MyTestMethod()
         {
-            Assert.AreEqual("known bad", ValidateOld("Error"));
-            Assert.AreEqual("known good", Validate("test"));
+            Assert.Equal("known bad", ValidateOld("Error"));
+            Assert.Equal("known good", Validate("test"));
         }
 
         private static string ValidateOld(string? x)

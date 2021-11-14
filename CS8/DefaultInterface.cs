@@ -1,13 +1,13 @@
 ﻿namespace LanguageFeatures.Cs8
 { 
-[TestClass]
+
 public class DefaultInterfaceTester
 {
-    [TestMethod]
+    [Fact]
     public void AddressInterfaceTest()
     {
         IAddress addr = new Location("123 Any St", "San Diego", "CA", "11111");
-        Assert.AreEqual("123 Any St\r\n\r\nSan Diego, CA 11111", addr.Formatted());
+        Assert.Equal("123 Any St\r\n\r\nSan Diego, CA 11111", addr.Formatted());
     }
 }
 

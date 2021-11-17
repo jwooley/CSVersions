@@ -32,7 +32,7 @@ namespace LanguageFeatures.Cs7
                                 r.sum += parsed;
                                 r.count++;
                             }
-                            Assert.Equal(parsed, 123);
+                            Assert.Equal(123, parsed);
                             break;
                         case null:
                             break;
@@ -44,6 +44,29 @@ namespace LanguageFeatures.Cs7
             Trace.WriteLine($"Sum: {result.sum} Count: {result.count}");
             Assert.Equal(8, result.count);
         }
+
+        [Fact]
+        public void PatternMatch()
+        {
+            object p = new CS9.Employee();
+            if (p is CS9.Employee)
+            {
+                var emp = (CS9.Employee)p;
+                Assert.Equal(p, emp);
+            }
+
+            var emp1 = p as CS9.Employee;
+            if (emp1 != null)
+            {
+                Assert.Equal(p, emp1);
+            }
+
+            if (p is CS9.Employee emp2)
+            {
+                Assert.Equal(p, emp2);
+            }
+        }
+
         [Fact]
         public void CS7RefLocal()
         {

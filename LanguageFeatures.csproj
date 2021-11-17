@@ -2,26 +2,39 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>preview</LangVersion>
     <IsPackable>false</IsPackable>
     <StartupObject></StartupObject>
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+	<ItemGroup>
+		<Using Include="System.Collections.Generic" />
+	</ItemGroup>
   <ItemGroup>
     <Compile Remove="Properties\**" />
     <EmbeddedResource Remove="Properties\**" />
     <None Remove="Properties\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Next\NewLinesInInterpolatedStringHoles.cs" />
+    <Compile Remove="Next\NullParameterChecking.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="CS8Records.cs1" />
     <None Remove="CSPastPresentFuture.pptx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Next\NewLinesInInterpolatedStringHoles.cs" />
+    <None Include="Next\NullParameterChecking.cs" />
   </ItemGroup>
 
   <ItemGroup>

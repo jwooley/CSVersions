@@ -8,7 +8,7 @@ namespace LanguageFeatures.Cs8
         [Fact]
         public void TestRangeNums()
         {
-            var arr = Enumerable.Range(1, 10).ToArray();
+            Span<int> arr = Enumerable.Range(1, 10).ToArray();
             var num12 = arr[..2];
             Assert.Equal(2, num12.Length);
             Assert.Equal(1, num12[0]);

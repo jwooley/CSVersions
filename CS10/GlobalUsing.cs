@@ -4,10 +4,10 @@ global using System.Linq;
 global using static System.Math;
 global using Xunit;
 global using System.Threading.Tasks;
-global using System.Collections.Generic;
+// Moved to project file
+// global using System.Collections.Generic;
 
 namespace LanguageFeatures.CS10;
-
 
 public class GlobalUsing
 {

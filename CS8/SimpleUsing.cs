@@ -1,7 +1,7 @@
 ﻿namespace LanguageFeatures.Cs8
 {
     
-    public class UsingPatterns
+    public class SimpleUsing
     {
         [Fact]
         public void OldUsing()

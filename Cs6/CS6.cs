@@ -94,11 +94,6 @@ namespace LanguageFeatures.CS6
         public string FullName1() => $"{FirstName} {LastName}";     // Expression Bodied Members
         public string FormattedName => $"{FirstName} {LastName}";  // Expression properties
 
-        public void TestCode()
-        {
-            var x = 1 + 2;
-        }
-
         [Fact]
         public void CanInitializeIndexes()
         {

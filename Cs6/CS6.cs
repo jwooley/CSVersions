@@ -65,25 +65,28 @@ namespace LanguageFeatures.CS6
                 Age = 42
             };
             Assert.Throws<FormatException>(() =>
-                Trace.WriteLine(string.Format("{1} is {2} years old", child.Name, child.Age))
-            );
+                    Trace.WriteLine(string.Format("{1} is {2} years old", child.Name, child.Age))
+        );
 
             Trace.WriteLine($"{child.Name} is {child.Age} years old on {child.BirthDate:mm/dd/yyyy}");    // String interpolation.
         }
 
-        public void CanGetNameof(string name)
+        [Fact]
+        public void TestCanGetNameof() => CanGetNameof("Something"); // Expression Bodied Members
+
+        public void CanGetNameof(string name1)
         {
             var parent = new Person();
-            parent.Name = name;
+            parent.Name = name1;
 
             OnNotifyPropertyChanged("name");           // Without nameof
-            OnNotifyPropertyChanged(nameof(name));     // With nameof
+            OnNotifyPropertyChanged(nameof(name1));     // With nameof
 
             Assert.Equal("Age", nameof(parent.Age));
 
             if (1 == 2)
             {
-                throw new ArgumentException("Field not set", nameof(name));
+                throw new ArgumentException("Field not set", nameof(name1));
             }
         }
 
@@ -91,7 +94,7 @@ namespace LanguageFeatures.CS6
         {
             return $"{FirstName} {LastName}";
         }
-        public string FullName1() => $"{FirstName} {LastName}";     // Expression Bodied Members
+        public string FullName1() => $"{FirstName} {LastName}";    // Expression Bodied Members
         public string FormattedName => $"{FirstName} {LastName}";  // Expression properties
 
         [Fact]

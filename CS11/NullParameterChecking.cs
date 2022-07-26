@@ -1,4 +1,4 @@
-﻿namespace LanguageFeatures.Next;
+﻿namespace LanguageFeatures.CS11;
 
 // feature not included
 public class NullParameterChecking

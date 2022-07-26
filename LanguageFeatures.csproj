@@ -23,8 +23,9 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Next\NewLinesInInterpolatedStringHoles.cs" />
-    <Compile Remove="Next\NullParameterChecking.cs" />
+    <Compile Remove="CS11\GenericMath.cs" />
+    <Compile Remove="CS11\NewLinesInInterpolatedStringHoles.cs" />
+    <Compile Remove="CS11\NullParameterChecking.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,8 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Next\NewLinesInInterpolatedStringHoles.cs" />
-    <None Include="Next\NullParameterChecking.cs" />
+    <None Include="CS11\GenericMath.cs" />
+    <None Include="CS11\NewLinesInInterpolatedStringHoles.cs" />
+    <None Include="CS11\NullParameterChecking.cs" />
   </ItemGroup>
 
   <ItemGroup>

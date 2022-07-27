@@ -74,19 +74,19 @@ namespace LanguageFeatures.CS6
         [Fact]
         public void TestCanGetNameof() => CanGetNameof("Something"); // Expression Bodied Members
 
-        public void CanGetNameof(string name1)
+        public void CanGetNameof(string name)
         {
             var parent = new Person();
-            parent.Name = name1;
+            parent.Name = name;
 
             OnNotifyPropertyChanged("name");           // Without nameof
-            OnNotifyPropertyChanged(nameof(name1));     // With nameof
+            OnNotifyPropertyChanged(nameof(name));     // With nameof
 
             Assert.Equal("Age", nameof(parent.Age));
 
             if (1 == 2)
             {
-                throw new ArgumentException("Field not set", nameof(name1));
+                throw new ArgumentException("Field not set", nameof(name));
             }
         }
 

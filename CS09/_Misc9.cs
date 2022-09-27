@@ -2,7 +2,7 @@
 
 namespace LanguageFeatures.CS9
 {
-    class Misc9
+    class _Misc9
     {
         public void NewExpression()
         {

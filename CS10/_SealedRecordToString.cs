@@ -1,6 +1,6 @@
 ﻿namespace LanguageFeatures.CS10;
 
-public class SealedRecordToString
+public class _SealedRecordToString
 {
 
     [Fact]

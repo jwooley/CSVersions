@@ -1,6 +1,4 @@
-﻿
-
-namespace LanguageFeatures.Cs8
+﻿namespace LanguageFeatures.Cs8
 {
     
     public class Range

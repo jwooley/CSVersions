@@ -13,9 +13,12 @@ namespace LanguageFeatures.CS6
         public int Y { get; } = 2;      // Getter-Only Auto Props
         public int Z { get; }
 
+        public int CS9 { get; init; }
+
         public Demos()
         {
             Z = 3;          // Constructor assignment to getter only;
+            CS9 = 42;       // C# 9 init only in constructor.
         }
 
         [Fact]
@@ -29,19 +32,6 @@ namespace LanguageFeatures.CS6
             Assert.Equal(
                 2 * Math.PI * radius, 
                 2 * PI * radius);   // Imports static
-        }
-
-        [Fact]
-        public async Task CanAwaitInCatchAndFinally()
-        {
-            try
-            {
-                throw new Exception("Oops");
-            }
-            catch (Exception ex) when (ex.InnerException == null)   // Exception filters
-            {
-                await LogAsync(ex);                                 // Await in catch block
-            }
         }
 
         [Fact]
@@ -66,7 +56,7 @@ namespace LanguageFeatures.CS6
             };
             Assert.Throws<FormatException>(() =>
                     Trace.WriteLine(string.Format("{1} is {2} years old", child.Name, child.Age))
-        );
+            );
 
             Trace.WriteLine($"{child.Name} is {child.Age} years old on {child.BirthDate:mm/dd/yyyy}");    // String interpolation.
         }
@@ -97,6 +87,21 @@ namespace LanguageFeatures.CS6
         public string FullName1() => $"{FirstName} {LastName}";    // Expression Bodied Members
         public string FormattedName => $"{FirstName} {LastName}";  // Expression properties
 
+        #region Less common features
+
+        [Fact]
+        public async Task CanAwaitInCatchAndFinally()
+        {
+            try
+            {
+                throw new Exception("Oops");
+            }
+            catch (Exception ex) when (ex.InnerException == null)   // Exception filters
+            {
+                await LogAsync(ex);                                 // Await in catch block
+            }
+        }
+
         [Fact]
         public void CanInitializeIndexes()
         {
@@ -112,6 +117,7 @@ namespace LanguageFeatures.CS6
             };
 
         }
+        #endregion
 
         #region Helper Methods
         public Task LogAsync(object value)

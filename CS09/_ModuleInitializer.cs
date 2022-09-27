@@ -2,7 +2,7 @@
 
 namespace LanguageFeatures.CS9
 {
-    class ModuleInitializer
+    class _ModuleInitializer
     {
         static string? somethingThatNeedsToBeInitializedFirst;
 

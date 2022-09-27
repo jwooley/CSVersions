@@ -35,11 +35,6 @@ public class MyBusinessObject : IBusinessFactory<MyBusinessObject>
     }
 }
 
-public interface BusinessBase<T> : IBusinessFactory<T>
-{
-
-}
-
 public interface IBusinessFactory<T>
 {
     static abstract Task<T> Load(int Id);

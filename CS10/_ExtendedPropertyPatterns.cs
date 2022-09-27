@@ -1,6 +1,6 @@
 ﻿namespace LanguageFeatures.CS10;
 
-public class ExtendedPropertyPatterns
+public class _ExtendedPropertyPatterns
 {
     [Fact]
     public void CanFilterExtendedPropertyPattern()

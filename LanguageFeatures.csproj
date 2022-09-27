@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <LangVersion>preview</LangVersion>
     <IsPackable>false</IsPackable>
     <StartupObject></StartupObject>
@@ -23,7 +23,6 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="CS11\GenericMath.cs" />
     <Compile Remove="CS11\NewLinesInInterpolatedStringHoles.cs" />
     <Compile Remove="CS11\NullParameterChecking.cs" />
   </ItemGroup>
@@ -34,7 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="CS11\GenericMath.cs" />
     <None Include="CS11\NewLinesInInterpolatedStringHoles.cs" />
     <None Include="CS11\NullParameterChecking.cs" />
   </ItemGroup>

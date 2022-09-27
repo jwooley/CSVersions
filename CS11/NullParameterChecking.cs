@@ -1,6 +1,7 @@
 ﻿namespace LanguageFeatures.CS11;
 
-// feature not included
+// feature not included,
+// but see SetsRequiredMembers
 public class NullParameterChecking
 {
     [Fact]

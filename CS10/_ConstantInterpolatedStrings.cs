@@ -1,6 +1,6 @@
 ﻿namespace LanguageFeatures.CS10;
 
-public class ConstantInterpolatedStrings
+public class _ConstantInterpolatedStrings
 {
     [Fact]
     public void CanInterpolateConstantStrings()

@@ -23,7 +23,6 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="CS11\NewLinesInInterpolatedStringHoles.cs" />
     <Compile Remove="CS11\NullParameterChecking.cs" />
   </ItemGroup>
 
@@ -33,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="CS11\NewLinesInInterpolatedStringHoles.cs" />
     <None Include="CS11\NullParameterChecking.cs" />
   </ItemGroup>
 

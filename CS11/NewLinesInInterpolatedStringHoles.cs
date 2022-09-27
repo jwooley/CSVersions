@@ -12,7 +12,7 @@ namespace LanguageFeatures.CS11
         public void MultiLineInStringInterpolationHoles()
         {
             var nums = Enumerable.Range(0, 10);
-            Assert.Equal("Evens: 2,4,6,8,10",
+            Assert.Equal("Evens: 0,2,4,6,8",
                 $"Evens: {string.Join(",",
                             nums
                                 .Where(num => num % 2 == 0))}");

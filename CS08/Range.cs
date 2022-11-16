@@ -6,7 +6,7 @@
         [Fact]
         public void TestRangeNums()
         {
-            Span<int> arr = Enumerable.Range(1, 10).ToArray();
+            Span<int> arr = Enumerable.Range(1, 10).ToArray().AsSpan();
             var num12 = arr[..2];
             Assert.Equal(2, num12.Length);
             Assert.Equal(1, num12[0]);

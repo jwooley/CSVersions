@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LanguageFeatures.CS11
 {
-    public class ListPatterns
+    public class _ListPatterns
     {
         [Fact]
         public void TestPatterns()

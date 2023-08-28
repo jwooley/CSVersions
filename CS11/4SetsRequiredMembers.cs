@@ -25,6 +25,6 @@ file class TestType
         Name = name;
     }
 
-    public required string Name { get; init; } 
-    public string Optional { get; set; }
+    public required string Name { get; init; }
+    public string Optional { get; set; } = "";
 }

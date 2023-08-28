@@ -23,7 +23,8 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="CS11\NullParameterChecking.cs" />
+    <Compile Remove="CS11\3NullParameterChecking.cs" />
+    <Compile Remove="Future\BackingField.cs" />
     <Compile Remove="Future\Extensiuons.cs" />
   </ItemGroup>
 
@@ -33,7 +34,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="CS11\NullParameterChecking.cs" />
+    <None Include="CS11\3NullParameterChecking.cs" />
+    <None Include="Future\BackingField.cs" />
     <None Include="Future\Extensiuons.cs" />
   </ItemGroup>
 

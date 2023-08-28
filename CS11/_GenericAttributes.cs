@@ -17,7 +17,7 @@ namespace LanguageFeatures.CS11
     public class GenericAttribute<T> : Attribute { }
 
 
-    internal class GenericAttributes
+    internal class _GenericAttributes
     {
         [NonGeneric(typeof(string))]
         public string OldWay() => string.Empty;

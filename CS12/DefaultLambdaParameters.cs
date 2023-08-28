@@ -19,7 +19,7 @@ namespace LanguageFeatures.CS12
         [Fact]
         public void ParamArray()
         {
-            var l = (params string[] parts) => String.Join(" ", parts);
+            var l = (params string[] parts) => string.Join(" ", parts);
             Assert.Equal("Jim Wooley", l(new [] { "Jim", "Wooley"}));
         }
     }

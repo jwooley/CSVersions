@@ -9,7 +9,7 @@ namespace LanguageFeatures.CS11
     public class RawStringLiterals
     {
         [Fact]
-        public void RawStringLiterals_RemovesExtraIndentationAndDoesntNeedQouteEscaping()
+        public void RawStringLiterals_RemovesExtraIndentationAndDoesntNeedQuoteEscaping()
         {
             var oldMultiLineString = @"var someString = ""this is a value"";
 if (true)
@@ -23,7 +23,7 @@ if (true)
                 {
                     Console.WriteLine(someString);
                 }
-                """;
+             """;
 
 
             Assert.Equal(oldMultiLineString, rawStringLiteralVersion);

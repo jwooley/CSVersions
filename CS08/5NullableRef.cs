@@ -21,7 +21,7 @@ namespace LanguageFeatures.Cs8
         public string State { get; set; }
         public string Zip { get; set; }
 
-        public Address(string addr1, string city, string state, string? zip)
+        public Address(string addr1, string city, string state, string zip)
         {
             Address1 = addr1;
             //Address2 = "";

@@ -21,12 +21,18 @@ namespace LanguageFeatures.Cs8
             }
             string? result;
 
-            if (x == "Error")
-                result = "known bad";
-            else if (x == "test")
-                result = "known good";
-            else
-                result = "invalid";
+            switch (x)
+            {
+                case "Error":
+                    result = "known bad";
+                    break;
+                case "test":
+                    result = "known good";
+                    break;
+                default:
+                    result = "invalid";
+                    break;
+            }
 
             return result;
         }

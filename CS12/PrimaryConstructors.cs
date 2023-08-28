@@ -10,11 +10,12 @@ public class PrimaryConstructors(string first, string last, string backingFieldR
 }
 public class  Consumer
 {
+    [Fact]
     public void Test()
     {
         var t = new PrimaryConstructors("Jim", "Wooley");
         Assert.Equal("Jim Wooley", t.NameFormatted);
         Assert.Equal("Wooley", t.Surname);
-        //Assert.Fail("can not access", t.firstName);
+        //Assert.Fail("can not access", t.first);
     }
 }

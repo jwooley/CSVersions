@@ -32,8 +32,8 @@ if (true)
         [Fact]
         public void RawStringLiterals_DollarSignsIndicatePlaceholderCount()
         {
-            var expected = "String with \"{placeholder}\" ";
             var value = "placeholder";
+            var expected = $"String with \"{value}\" ";
             var concatenated = $$"""String with "{{{value}}}" """;
             Assert.Equal(expected, concatenated);
         }

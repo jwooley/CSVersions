@@ -9,7 +9,8 @@ public class SetsRequiredMembers
     {
         var t1 = new TestType("Jim");
         var t2 = new TestType { Name = "Jim" };
-        //var fails = new TestType { Optional = "Not required" };
+        //var fails = new TestType();
+        //var alsofails = new TestType { Optional = "Not required" };
     }
 }
 

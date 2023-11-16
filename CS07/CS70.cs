@@ -48,20 +48,20 @@ namespace LanguageFeatures.Cs7
         [Fact]
         public void PatternMatch()
         {
-            object p = new CS9.Employee();
-            if (p is CS9.Employee)
+            object p = new CS09.Employee();
+            if (p is CS09.Employee)
             {
-                var emp = (CS9.Employee)p;
+                var emp = (CS09.Employee)p;
                 Assert.Equal(p, emp);
             }
 
-            var emp1 = p as CS9.Employee;
+            var emp1 = p as CS09.Employee;
             if (emp1 != null)
             {
                 Assert.Equal(p, emp1);
             }
 
-            if (p is CS9.Employee emp2)
+            if (p is CS09.Employee emp2)
             {
                 Assert.Equal(p, emp2);
             }

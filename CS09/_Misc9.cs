@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace LanguageFeatures.CS9
+namespace LanguageFeatures.CS09
 {
     class _Misc9
     {

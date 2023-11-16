@@ -13,11 +13,13 @@ internal class CollectionExpression
         DoSomething(new());
         DoSomething([1.2m, 1.3m]);
         DoSomething([]);
+        IEnumerable<int> ints = [1, 2, 3];
+
         //var stillNotSure = [1, 2, 3];
         //var dictionaryLiteral = ["first": 1, "second": 2];
 
         decimal[] more = [3.1m, 4.2m];
-        decimal[] combined = [.. nums, .. more];
+        decimal[] combinedUsingSpreadOperator = [.. nums, .. more];
     }
     public void DoSomething(List<decimal> items)
     {

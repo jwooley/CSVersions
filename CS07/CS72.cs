@@ -51,8 +51,8 @@ namespace LanguageFeatures.Cs7
         [Fact]
         public void CS72_ReferenceSemantics_refReadonly()
         {
-            var p1 = CS72.PIish;                    // By val copy
-            ref readonly var p2 = ref CS72.PIish;   // Readonly reference
+            var p1 = PIish;                    // By val copy
+            ref readonly var p2 = ref PIish;   // Readonly reference
 
             p1 = 3.14;                              // Changable
             //p2 = 3.14;                            // can't change

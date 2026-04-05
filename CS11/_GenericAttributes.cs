@@ -23,7 +23,7 @@ namespace LanguageFeatures.CS11
         public string OldWay() => string.Empty;
 
 
-        [GenericAttribute<string>()]
+        [Generic<string>()]
         public string Method() => string.Empty;
     }
 }

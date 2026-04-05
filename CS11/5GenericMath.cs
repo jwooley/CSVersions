@@ -24,6 +24,9 @@ namespace LanguageFeatures.CS11
             Assert.Equal(3.6f, Sum(floats), .001);
         }
 
+        // C# 11 introduces the INumber<T> interface,
+        // which is a generic numeric type that can be used
+        // to write code that works with any numeric type. 
         public static T Add<T>(T a, T b)
             where T : INumber<T>
         {
@@ -33,6 +36,7 @@ namespace LanguageFeatures.CS11
         public static T Sum<T>(IEnumerable<T> values)
             where T : INumber<T>
         {
+            // Numbers can be initialized to zero using the static property T.Zero,
             T result = T.Zero;
 
             foreach (var value in values)
@@ -43,6 +47,8 @@ namespace LanguageFeatures.CS11
             return result;
         }
 
+        // C# 11 allows recursive patterns in switch expressions,
+        // which can be used to implement a recursive sum function for spans.
         public static T Sum<T>(Span<T> values)
             where T : INumber<T> => 
             values switch

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace LanguageFeatures.CS11;
 
-namespace LanguageFeatures.CS11;
+public interface IBusinessFactory<T>
+{
+    static abstract Task<T> Load(int Id);
+}
 
 public class StaticAbstractMembersInInterfaces
 {
@@ -33,9 +32,4 @@ public class MyBusinessObject : IBusinessFactory<MyBusinessObject>
         var instance = await Task.FromResult(new MyBusinessObject { Id = id, Name = "Works" }); ;
         return instance;
     }
-}
-
-public interface IBusinessFactory<T>
-{
-    static abstract Task<T> Load(int Id);
 }

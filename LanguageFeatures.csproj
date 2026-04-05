@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net11.0</TargetFramework>
     <LangVersion>preview</LangVersion>
     <IsPackable>false</IsPackable>
     <StartupObject></StartupObject>
@@ -14,40 +14,39 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="CS11\_NullParameterChecking.cs" />
+    <Compile Remove="CS14\FileBasedAppDirectives.cs" />
+    <Compile Remove="CS15\UnionTypes.cs" />
+    <Compile Remove="CS09\1TopLevelStatements.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<Using Include="System.Collections.Generic" />
 	</ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Properties\**" />
-    <EmbeddedResource Remove="Properties\**" />
-    <None Remove="Properties\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="CS11\3NullParameterChecking.cs" />
-    <Compile Remove="Future\BackingField.cs" />
-    <Compile Remove="Future\Extensiuons.cs" />
-  </ItemGroup>
 
   <ItemGroup>
-    <None Remove="CS8Records.cs1" />
     <None Remove="CSPastPresentFuture.pptx" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="CS11\3NullParameterChecking.cs" />
-    <None Include="Future\BackingField.cs" />
-    <None Include="Future\Extensiuons.cs" />
+    <None Include="CS14\FileBasedAppDirectives.cs" />
+    <None Include="CS15\UnionTypes.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
-    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
-    <PackageReference Include="xunit" Version="2.6.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3">
+    <None Include="CS11\_NullParameterChecking.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="CS09\1TopLevelStatements.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="5.3.0" />-->
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

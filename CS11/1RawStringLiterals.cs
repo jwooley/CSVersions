@@ -11,11 +11,11 @@ namespace LanguageFeatures.CS11
         [Fact]
         public void RawStringLiterals_RemovesExtraIndentationAndDoesntNeedQuoteEscaping()
         {
-            var oldMultiLineString = @"var someString = ""this is a value"";
-if (true)
-{
-    Console.WriteLine(someString);
-}";
+            var oldMultiLineString = @"   var someString = ""this is a value"";
+   if (true)
+   {
+       Console.WriteLine(someString);
+   }";
 
             var rawStringLiteralVersion = """
                 var someString = "this is a value";
@@ -34,7 +34,7 @@ if (true)
         {
             var value = "placeholder";
             var expected = $"String with \"{value}\" ";
-            var concatenated = $$"""String with "{{{value}}}" """;
+            var concatenated = $$"""String with "{{value}}" """;
             Assert.Equal(expected, concatenated);
         }
     }

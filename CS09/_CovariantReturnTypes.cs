@@ -1,13 +1,14 @@
 ﻿namespace LanguageFeatures.CS09
 {
-    class consumer
+    public class Consumer
     {
-        void Test()
+        [Fact]
+        public void Test()
         {
             var c1 = new C1();
-            Console.WriteLine(c1.Emp.Title);
+            Assert.Equal("t", c1.Emp.Title);
             C1 c2 = new C2();
-            Console.WriteLine(c2.Emp.Title);
+            Assert.Equal("t", c2.Emp.Title);
         }
     }
     class C1

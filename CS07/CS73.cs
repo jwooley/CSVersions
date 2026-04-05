@@ -91,7 +91,7 @@ namespace LanguageFeatures.Cs7
         [Fact]
         public void CS73_AdditionalGenericConstraints()
         {
-            M<Action<string>, System.ConsoleColor, CS73>(x => Console.Write(x), System.ConsoleColor.Black, this);
+            M<Action<string>, ConsoleColor, CS73>(x => Console.Write(x), ConsoleColor.Black, this);
 
             void M<D,E,O>(D d, E e, O o)
                 where D: Delegate

@@ -1,5 +1,13 @@
 namespace LanguageFeatures.CS14;
 
+public static class StringExtensionsBefore
+{
+    public static bool IsBlankBefore(this string value) => string.IsNullOrWhiteSpace(value);
+
+    public static string RepeatBefore(this string value, int count)
+        => string.Concat(Enumerable.Repeat(value, count));
+}
+
 public static class StringExtensions
 {
     extension(string value)
@@ -25,12 +33,4 @@ public class ExtensionMembersTests
         var message = "hi";
         Assert.Equal("hihi", message.RepeatBefore(2));
     }
-}
-
-public static class StringExtensionsBefore
-{
-    public static bool IsBlankBefore(this string value) => string.IsNullOrWhiteSpace(value);
-
-    public static string RepeatBefore(this string value, int count)
-        => string.Concat(Enumerable.Repeat(value, count));
 }

@@ -1,5 +1,18 @@
 namespace LanguageFeatures.CS14;
 
+internal class FieldBackedPropertiesBefore
+{
+    public string SimpleAuto { get; set; } = string.Empty;
+
+    private string _message = string.Empty;
+
+    public string Message
+    {
+        get => _message;
+        set => _message = value ?? throw new ArgumentNullException(nameof(value));
+    }
+}
+
 internal class FieldBackedProperties
 {
     //string field;
@@ -16,13 +29,3 @@ internal class FieldBackedProperties
     } = string.Empty;
 }
 
-internal class FieldBackedPropertiesBefore
-{
-    private string _message = string.Empty;
-
-    public string Message
-    {
-        get => _message;
-        set => _message = value ?? throw new ArgumentNullException(nameof(value));
-    }
-}

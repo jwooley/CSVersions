@@ -5,6 +5,8 @@ internal interface ILengthProvider
     int Length { get; }
 }
 
+// C# 14 allows ref structs to implement interfaces,
+// but only if the interface is marked with the new 'allows ref struct' modifier.
 internal readonly ref struct Token(ReadOnlySpan<char> value) : ILengthProvider
 {
     private readonly ReadOnlySpan<char> _value = value;

@@ -9,6 +9,8 @@ public class CollectionExpressionArguments
     {
         string[] values = ["one", "two", "three"];
 
+        // C# 15 allows collection expressions to be used as arguments in method calls, object initializers, and collection initializers. This means that you can directly pass a collection expression to a method or use it to
+        // initialize an object or collection without needing to create a separate variable for the collection.
         List<string> names = [with(capacity: values.Length * 2), .. values];
         Assert.Equal(3, names.Count);
   

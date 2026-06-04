@@ -12,10 +12,15 @@ public static class StringExtensions
 {
     extension(string value)
     {
-        public bool IsBlank => string.IsNullOrWhiteSpace(value);
-
+        // Extension Methods allow you to define methods that can be called as if they were instance methods of the extended type.
         public string Repeat(int count)
             => string.Concat(Enumerable.Repeat(value, count));
+
+        // Extension Properties allow you to define properties that can be accessed
+        // as if they were instance properties of the extended type.
+        // They can not have a setter, but they can be used to provide additional information or functionality related to the extended type.
+        public bool IsBlank => string.IsNullOrWhiteSpace(value);
+
     }
 }
 
@@ -32,5 +37,6 @@ public class ExtensionMembersTests
     {
         var message = "hi";
         Assert.Equal("hihi", message.RepeatBefore(2));
+        Assert.False(message.IsBlankBefore());
     }
 }

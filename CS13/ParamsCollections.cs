@@ -2,6 +2,8 @@ namespace LanguageFeatures.CS13;
 
 internal class ParamsCollections
 {
+    // C# 14 allows params parameters to be collections, which means that you can
+    // use the params keyword with any type that implements IEnumerable<T>, not just arrays.
     public int Sum(params IReadOnlyList<int> values) => values.Sum();
 
     public void Demo()

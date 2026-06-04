@@ -6,6 +6,7 @@ internal class LambdaParameterModifiers
 
     public bool Demo(string text, out int value)
     {
+        // C# 14 allows lambda expressions to have parameters with modifiers such as out, ref, and in.
         TryParseInt parser = (text, out value) => int.TryParse(text, out value);
         return parser(text, out value);
     }

@@ -2,6 +2,7 @@ namespace LanguageFeatures.CS13;
 
 internal class _OverloadResolutionPriority
 {
+    // Attribute allows us to specify the priority of overloads in method resolution.
     [System.Runtime.CompilerServices.OverloadResolutionPriority(1)]
     private static string Format(ReadOnlySpan<char> value) => new(value);
 

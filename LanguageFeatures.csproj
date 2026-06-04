@@ -17,7 +17,6 @@
   <ItemGroup>
     <Compile Remove="CS11\_NullParameterChecking.cs" />
     <Compile Remove="CS14\FileBasedAppDirectives.cs" />
-    <Compile Remove="CS15\UnionTypes.cs" />
     <Compile Remove="CS09\1TopLevelStatements.cs" />
   </ItemGroup>
 
@@ -31,7 +30,6 @@
 
   <ItemGroup>
     <None Include="CS14\FileBasedAppDirectives.cs" />
-    <None Include="CS15\UnionTypes.cs" />
   </ItemGroup>
 
   <ItemGroup>
